@@ -1,0 +1,57 @@
+{% extends 'base/login/base.html' %}
+
+{% load static %}
+
+{% block title %}ورود{% endblock %}
+
+{% block content %}
+	<div class="login-box">
+		<div class="login-logo">
+			<a href="#"><b>ERP</b></a>
+		</div>
+		<div class="card">
+			<div class="card-body login-card-body">
+				<p class="login-box-msg">ورود</p>
+				<form method="POST">
+					{% csrf_token %}
+					<div class="input-group mb-3">
+						{{ form.username }}
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-envelope"></span>
+							</div>
+						</div>
+					</div>
+					<div class="input-group mb-3">
+						{{ form.password }}
+						<div class="input-group-append">
+							<div class="input-group-text">
+								<span class="fas fa-lock"></span>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-8">
+							<div class="icheck-primary">
+								<input type="checkbox" id="remember">
+								<label for="remember">
+									مرا به خاطر بسپار
+								</label>
+							</div>
+						</div>
+						<div class="col-4">
+							<button type="submit" class="btn btn-primary btn-block btn-flat">ورود</button>
+						</div>
+					</div>
+				</form>
+
+				<p class="mb-1">
+					<a href="#">رمز عبور را فراموش کرده ام</a>
+				</p>
+				<p class="mb-0">
+					<a href="register.html" class="text-center">ایجاد حساب کاربری</a>
+				</p>
+			</div>
+		</div>
+	</div>
+{% endblock %}
